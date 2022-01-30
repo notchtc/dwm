@@ -7,7 +7,11 @@ Requires the sysask script from my dotfiles (https://github.com/notchtc/dotfiles
 
 Requirements
 ------------
-In order to build dwm you need the Xlib header files.
+In order to build dwm you need:
+- Xlib header files.
+- libxcb
+- Xlib-libxcb
+- xcb-res
 
 
 Installation
