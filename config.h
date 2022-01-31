@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "Alacritty", NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "KeePassXC", NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,        NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "TelegramDesktop", NULL, NULL, 0, 1, 0, 0, -1 },
 };
 
 /* layout(s) */
