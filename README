@@ -2,8 +2,9 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
-I was too lazy to change the man pages, but the changes in the keybindings aren't big.
+All keybinds are in the man page.
 Requires the sysask script from my dotfiles (https://github.com/notchtc/dotfiles).
+
 
 Requirements
 ------------
