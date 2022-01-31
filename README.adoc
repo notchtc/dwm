@@ -1,0 +1,66 @@
+= dwm - dynamic window manager
+chtc <notnotcha0t1c@protonmail.com>
+{docdate}
+
+My personal dwm build.
+
+All keybinds are in the man page.
+
+Requires the sysask script from https://github.com/notchtc/dotfiles[my dotfiles].
+
+== Requirements
+In order to build dwm you need:
+
+- Xlib header files.
+- libxcb
+- Xlib-libxcb
+- xcb-res
+
+== Installation
+Clone the repository and enter the directory.
+[source,shell]
+git clone https://github.com/notchtc/dwm
+cd dwm
+
+Edit config.mk to match your local setup (dwm is installed into the /usr/local namespace by default).
+
+Afterwards enter the following command to build and install dwm (if necessary as root):
+[source,shell]
+make clean install
+
+== Patches
+
+- https://dwm.suckless.org/patches/actualfullscreen/[actualfullscreen]
+- https://dwm.suckless.org/patches/decoration_hints/[decoration hints]
+- https://dwm.suckless.org/patches/hide_vacant_tags/[hide vacant tags]
+- https://dwm.suckless.org/patches/removeborder[removeborder]
+- https://dwm.suckless.org/patches/restartsig[restartsig]
+- https://dwm.suckless.org/patches/steam[steam]
+- https://dwm.suckless.org/patches/swallow[swallow]
+- https://dwm.suckless.org/patches/systray[systray]
+- https://dwm.suckless.org/patches/xresources[xresources]
+
+== Running dwm
+Add the following line to your .xinitrc to start dwm using startx:
+[source,shell]
+exec dwm
+
+In order to connect dwm to a specific display,
+make sure that the DISPLAY environment variable is set correctly, e.g.:
+[source,shell]
+DISPLAY=foo.bar:1 exec dwm
+
+(This will start dwm on display :1 of the host foo.bar.)
+
+In order to display status info in the bar,
+you can do something like this in your .xinitrc:
+
+[source,shell]
+while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
+do
+	sleep 1
+done &
+exec dwm
+
+== Configuration
+The configuration of dwm is done by editing config.h and (re)compiling the source code.
