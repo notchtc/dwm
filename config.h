@@ -13,7 +13,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "monospace:size=11";
 static char dmenufont[]       = "monospace:size=11";
-static const char *fonts[]    = { "monospace:size=11" };
+static const char *fonts[]    = { font };
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
 static char normfgcolor[]     = "#bbbbbb";
@@ -83,13 +83,13 @@ ResourcePref resources[] = {
 		{ "selbgcolor",         STRING,  &selbgcolor },
 		{ "selbordercolor",     STRING,  &selbordercolor },
 		{ "selfgcolor",         STRING,  &selfgcolor },
-		{ "borderpx",          	INTEGER, &borderpx },
-		{ "snap",          		INTEGER, &snap },
-		{ "showbar",          	INTEGER, &showbar },
-		{ "topbar",          	INTEGER, &topbar },
-		{ "nmaster",          	INTEGER, &nmaster },
-		{ "resizehints",       	INTEGER, &resizehints },
-		{ "mfact",      	 	FLOAT,   &mfact },
+		{ "borderpx",           INTEGER, &borderpx },
+		{ "snap",               INTEGER, &snap },
+		{ "showbar",            INTEGER, &showbar },
+		{ "topbar",             INTEGER, &topbar },
+		{ "nmaster",            INTEGER, &nmaster },
+		{ "resizehints",        INTEGER, &resizehints },
+		{ "mfact",              FLOAT,   &mfact },
 };
 
 #include <X11/XF86keysym.h>
@@ -132,12 +132,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = sysaskcmd } },
 
 	/* custom keybinds */
-	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5; kill -35 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5; kill -35 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioMute,        spawn, SHCMD("pamixer -t; kill -35 $(pidof dwmblocks)")   },
-	{ 0, XF86XK_AudioPrev,        spawn, SHCMD("playerctl previous || cmus-remote -r")      },
-	{ 0, XF86XK_AudioNext,        spawn, SHCMD("playerctl next || cmus-remote -n")          },
-	{ 0, XF86XK_AudioPlay,        spawn, SHCMD("playerctl play-pause || cmus-remote -u")    },
+	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5; kill -36 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5; kill -36 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioMute,        spawn, SHCMD("pamixer -t; kill -36 $(pidof dwmblocks)")   },
+
+	{ 0, XF86XK_AudioPrev,        spawn, SHCMD("playerctl previous; kill -35 $(pidof dwmblocks)")   },
+	{ 0, XF86XK_AudioNext,        spawn, SHCMD("playerctl next; kill -35 $(pidof dwmblocks)")       },
+	{ 0, XF86XK_AudioPlay,        spawn, SHCMD("playerctl play-pause; kill -35 $(pidof dwmblocks)") },
 
 	{ 0, XK_Print,         spawn, SHCMD("maim -u | xclip -selection clipboard -t image/png")  },
 	{ ShiftMask, XK_Print, spawn, SHCMD("maim -su | xclip -selection clipboard -t image/png") },
