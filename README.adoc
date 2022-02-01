@@ -2,16 +2,16 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 
-My personal dwm build.
+My personal https://dwm.suckless.org[dwm] build.
 
 All keybinds are in the man page.
 
 Requires the sysask script from https://github.com/notchtc/dotfiles[my dotfiles].
 
 == Requirements
-In order to build dwm you need:
+In order to build dwm you need the header files of:
 
-- Xlib header files.
+- Xlib
 - libxcb
 - Xlib-libxcb
 - xcb-res
