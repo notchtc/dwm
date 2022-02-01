@@ -21,9 +21,10 @@ static char selfgcolor[]      = "#eeeeee";
 static char selbordercolor[]  = "#005577";
 static char selbgcolor[]      = "#005577";
 static char *colors[][3]      = {
-	/*               fg           bg           border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	/*                fg           bg           border   */
+	[SchemeNorm]  = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]   = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeTitle] = { normfgcolor, normbgcolor, normbordercolor },
 };
 
 /* tagging */
