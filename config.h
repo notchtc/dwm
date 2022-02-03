@@ -73,8 +73,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon  NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *sysask[]   = { "sysask", "-m", dmenumon, NULL };
 
 ResourcePref resources[] = {
 		{ "font",               STRING,  &font },
@@ -131,7 +132,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("sysask") },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = sysask} },
 
 	/* custom keybinds */
 	{ MODKEY|ShiftMask,           XK_y,  spawn, SHCMD("ytfzf -D --pages=2") },
