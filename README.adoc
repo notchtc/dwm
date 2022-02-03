@@ -6,15 +6,24 @@ My personal https://dwm.suckless.org[dwm] build.
 
 All keybinds are in the man page.
 
-Requires the sysask script from https://github.com/notchtc/dotfiles[my dotfiles].
-
 == Requirements
-In order to build dwm you need the header files of:
+In order to build dwm you need the header files the Xlib header files and:
 
-- Xlib
 - libxcb
 - Xlib-libxcb
 - xcb-res
+
+This build uses things like:
+
+- dmenu
+- st
+- maim
+- pamixer
+- playerctl
+- https://raw.githubusercontent.com/notchtc/dotfiles/master/.local/bin/sysask[sysask]
+- https://github.com/pystardust/ytfzf[ytfzf]
+- xclip
+- xbacklight
 
 == Installation
 Clone the repository and enter the directory.

@@ -73,9 +73,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *sysaskcmd[] = { "sysask", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 
 ResourcePref resources[] = {
 		{ "font",               STRING,  &font },
@@ -132,9 +131,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = sysaskcmd } },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("sysask") },
 
 	/* custom keybinds */
+	{ MODKEY|ShiftMask,           XK_y,  spawn, SHCMD("ytfzf -D --pages=2") },
+
 	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5; kill -36 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5; kill -36 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioMute,        spawn, SHCMD("pamixer -t; kill -36 $(pidof dwmblocks)")   },
@@ -157,7 +158,6 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
