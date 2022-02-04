@@ -2,6 +2,8 @@
 chtc <notnotcha0t1c@protonmail.com>
 {docdate}
 
+IMPORTANT:: Install https://github.com/uditkarode/libxft-bgra[libxft-bgra] to not have crashes when emojis are displayed.
+
 My personal https://dwm.suckless.org[dwm] build.
 
 All keybinds are in the man page.

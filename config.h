@@ -11,9 +11,9 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray  = 1;        /* 0 means no systray */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:size=11";
-static char dmenufont[]       = "monospace:size=11";
-static const char *fonts[]    = { font };
+static char font[]            = "monospace:size=13";
+static char dmenufont[]       = "monospace:size=13";
+static const char *fonts[]    = { font, "Noto Color Emoji:size=13" };
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
 static char normfgcolor[]     = "#bbbbbb";
