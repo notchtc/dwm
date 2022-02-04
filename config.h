@@ -152,8 +152,8 @@ static Key keys[] = {
 	{ 0, XK_Print,         spawn, SHCMD("maim -u | xclip -selection clipboard -t image/png")  },
 	{ ShiftMask, XK_Print, spawn, SHCMD("maim -su | xclip -selection clipboard -t image/png") },
 
-	{ 0, XF86XK_MonBrightnessUp,   spawn, SHCMD("xbacklight -inc 15; kill -36 $(pidof dwmblocks)") },
-	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 15; kill -36 $(pidof dwmblocks)") },
+	{ 0, XF86XK_MonBrightnessUp,   spawn, SHCMD("xbacklight -inc 15") },
+	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 15") },
 };
 
 /* button definitions */
