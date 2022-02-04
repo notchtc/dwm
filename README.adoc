@@ -41,14 +41,12 @@ make clean install
 
 == Patches
 - https://dwm.suckless.org/patches/actualfullscreen/[actualfullscreen]
-- https://dwm.suckless.org/patches/decoration_hints/[decoration hints]
 - https://dwm.suckless.org/patches/hide_vacant_tags/[hide vacant tags]
 - https://dwm.suckless.org/patches/removeborder/[removeborder]
 - https://dwm.suckless.org/patches/restartsig/[restartsig]
-- https://dwm.suckless.org/patches/steam/[steam]
+- https://dwm.suckless.org/patches/splitstatus/[splitstatus]
 - https://dwm.suckless.org/patches/swallow/[swallow]
 - https://dwm.suckless.org/patches/systray/[systray]
-- https://dwm.suckless.org/patches/titlecolor/[titlecolor]
 - https://dwm.suckless.org/patches/xresources[xresources]
 
 == Running dwm
