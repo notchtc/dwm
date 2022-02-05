@@ -47,6 +47,8 @@ static const Rule rules[] = {
 	{ "KeePassXC",NULL,    NULL,           0,         1,          0,           0,        -1 },
 	{ "Steam",   NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Lutris",  NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "music",   NULL,     NULL,           1 << 7,    0,          1,           0,        -1 },
+	{ "rss",     NULL,     NULL,           1 << 7,    0,          1,           0,        -1 },
 };
 
 /* layout(s) */
@@ -143,6 +145,10 @@ static Key keys[] = {
 
 	/* custom keybinds */
 	{ MODKEY|ShiftMask,           XK_y,  spawn, SHCMD("ytfzf -D --pages=2") },
+
+	{ MODKEY|ShiftMask,           XK_b,  spawn, SHCMD("firefox")                       },
+	{ MODKEY|ShiftMask,           XK_m,  spawn, SHCMD(TERMINAL " -c music -e cmus")    },
+	{ MODKEY|ShiftMask,           XK_n,  spawn, SHCMD(TERMINAL " -c rss -e newsboat")  },
 
 	{ 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5; kill -36 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5; kill -36 $(pidof dwmblocks)") },
